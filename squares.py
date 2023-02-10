@@ -1,8 +1,9 @@
 counter = 0
 N = 50
+print(N, end=' ')
 while True:
-    counter += 1
     pow_2 = counter ** 2
+    counter += 1
     if pow_2 > N:
         break
-    print(N, pow_2)
+    print(pow_2, end=' ')
