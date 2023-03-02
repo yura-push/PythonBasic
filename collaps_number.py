@@ -8,7 +8,7 @@ def number_collaps(num):
             total_sum = sum(total_sum_list)
         return total_sum
     except ValueError as exc:
-        print("Only positive integer values!")
+        print(exc, "only positive integer values")
 
 
 print(number_collaps(8938))
