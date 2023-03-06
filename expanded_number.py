@@ -1,4 +1,4 @@
-def expanded_form2(num):
+def expanded_form(num):
     if num <= 0:
         raise Exception("only integers bigger than 0")
 
@@ -7,4 +7,4 @@ def expanded_form2(num):
         [str(list_num[i]) + "0" * (len(list_num) - 1 - i) for i in range(len(list_num)) if list_num[i] > 0]) + "'"
 
 
-print(expanded_form2(73045))
+print(expanded_form(73045))
