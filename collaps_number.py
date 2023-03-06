@@ -1,14 +1,14 @@
-def number_collaps(num):
-    try:
-        list_num = list(map(int, str(num)))
-        total_sum = sum(list_num)
-        # print(temp_sum)
-        while len(str(total_sum)) >= 2:
-            total_sum_list = list(map(int, str(total_sum)))
-            total_sum = sum(total_sum_list)
-        return total_sum
-    except ValueError as exc:
-        print(exc, "only positive integer values")
+def collapse_number(num):
+    if num <= 0:
+        raise Exception("only positive integers")
+
+    list_num = list(map(int, str(num)))
+    total_sum = sum(list_num)
+    while len(str(total_sum)) >= 2:
+        total_sum_list = list(map(int, str(total_sum)))
+        total_sum = sum(total_sum_list)
+    return total_sum
 
 
-print(number_collaps(8938))
+print(collapse_number(73432))
+
