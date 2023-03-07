@@ -10,5 +10,5 @@ def collapse_number(num):
     return total_sum
 
 
-print(collapse_number(73432))
+print(collapse_number(8938))
 
