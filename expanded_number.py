@@ -7,4 +7,4 @@ def expanded_form(num):
         [str(list_num[i]) + "0" * (len(list_num) - 1 - i) for i in range(len(list_num)) if list_num[i] > 0]) + "'"
 
 
-print(expanded_form(73045))
+print(expanded_form(0))
