@@ -1,5 +1,4 @@
 from random import randint
-from pprint import pprint
 
 M = int(input("Enter number of rows: "))
 N = int(input("Enter number of columns: "))
