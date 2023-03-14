@@ -13,7 +13,7 @@ def sort_matrix(matrix):
     # знаходимо суму елементів кожного стовпця
     column_sums = [0] * n
     for j in range(n):
-        for i in range(m):
+        for i in range(len(matrix)):
             column_sums[j] += matrix[i][j]
 
     # сортуємо стовпці за зростанням сум елементів
@@ -26,16 +26,16 @@ def sort_matrix(matrix):
                 min_index = k
         if min_index != j:
             # міняємо місцями стовпці
-            for i in range(m):
+            for i in range(len(matrix)):
                 matrix[i][j], matrix[i][min_index] = matrix[i][min_index], matrix[i][j]
             column_sums[j], column_sums[min_index] = column_sums[min_index], column_sums[j]
 
     # сортуємо кожен непарний стовпець
     for j in range(1, n, 2):
-        for i in range(m - 1):
+        for i in range(len(matrix) - 1):
             min_value = matrix[i][j]
             min_index = i
-            for k in range(i + 1, m):
+            for k in range(i + 1, len(matrix)):
                 if matrix[k][j] < min_value:
                     min_value = matrix[k][j]
                     min_index = k
@@ -45,10 +45,10 @@ def sort_matrix(matrix):
 
     # сортуємо кожен парний стовпець
     for j in range(0, n, 2):
-        for i in range(m - 1):
+        for i in range(len(matrix) - 1):
             max_value = matrix[i][j]
             max_index = i
-            for k in range(i + 1, m):
+            for k in range(i + 1, len(matrix)):
                 if matrix[k][j] > max_value:
                     max_value = matrix[k][j]
                     max_index = k
