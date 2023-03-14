@@ -6,21 +6,17 @@ matrix = [[randint(1, 50) for j in range(M)] for i in range(M)]
 
 
 def sort_matrix(matrix):
-    # знаходимо кількість рядків та стовпців у матриці
-    m = len(matrix)
-    n = len(matrix[0])
-
     # знаходимо суму елементів кожного стовпця
-    column_sums = [0] * n
-    for j in range(n):
+    column_sums = [0] * len(matrix[0])
+    for j in range(len(matrix[0])):
         for i in range(len(matrix)):
             column_sums[j] += matrix[i][j]
 
     # сортуємо стовпці за зростанням сум елементів
-    for j in range(n - 1):
+    for j in range(len(matrix[0]) - 1):
         min_sum = column_sums[j]
         min_index = j
-        for k in range(j + 1, n):
+        for k in range(j + 1, len(matrix[0])):
             if column_sums[k] < min_sum:
                 min_sum = column_sums[k]
                 min_index = k
@@ -31,7 +27,7 @@ def sort_matrix(matrix):
             column_sums[j], column_sums[min_index] = column_sums[min_index], column_sums[j]
 
     # сортуємо кожен непарний стовпець
-    for j in range(1, n, 2):
+    for j in range(1, len(matrix[0]), 2):
         for i in range(len(matrix) - 1):
             min_value = matrix[i][j]
             min_index = i
@@ -44,7 +40,7 @@ def sort_matrix(matrix):
                 matrix[i][j], matrix[min_index][j] = matrix[min_index][j], matrix[i][j]
 
     # сортуємо кожен парний стовпець
-    for j in range(0, n, 2):
+    for j in range(0, len(matrix[0]), 2):
         for i in range(len(matrix) - 1):
             max_value = matrix[i][j]
             max_index = i
