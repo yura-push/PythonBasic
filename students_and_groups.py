@@ -1,19 +1,40 @@
 class Group:
-    # code here
-    pass
+    def __init__(self, group_name):
+        self.__group_name = group_name
+        self.group_list = []
+
+    def get_name(self):
+        return f"{self.__group_name}"
+
+    def add_students(self, students):
+        [self.group_list.append(student) for student in students]
+
+    def get_students(self):
+        return self.group_list
+
+    def get_student(self, student_num):
+        return self.group_list[student_num]
+
+    def del_students(self, param):
+        for student in self.group_list:
+            if student == param:
+                self.group_list.pop(student)
+
+    def __str__(self):
+        return f"{self.__group_name}"
 
 
 class Student:
-    def __init__(self, name, surname, grades=[]):
+    def __init__(self, name, surname):
         self.__name = name
         self.__surname = surname
         self.__grades = []
 
     def get_name(self):
-        return self.__name
+        return f"{self.__name}"
 
     def get_surname(self):
-        return self.__surname
+        return f"{self.__surname}"
 
     def add_grade(self, grade):
         self.__grades.append(grade)
@@ -23,6 +44,9 @@ class Student:
 
     def set_grades(self, grades_lst):
         self.__grades = grades_lst
+
+    def __str__(self):
+        return f"{self.__name} {self.__surname}"
 
 
 if __name__ == "__main__":
