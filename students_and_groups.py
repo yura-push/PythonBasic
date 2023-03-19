@@ -20,9 +20,6 @@ class Group:
             if student == param:
                 self.group_list.pop(student)
 
-    def __str__(self):
-        return f"{self.__group_name}"
-
 
 class Student:
     def __init__(self, name, surname):
