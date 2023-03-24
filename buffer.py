@@ -1,19 +1,16 @@
 class Buffer:
     def __init__(self):
-        self.list_num = []
+        self.buffer = []
+        self.sum_of_5 = 0
 
     def add(self, *a):
         for num in a:
-            self.list_num.append(num)
-            if len(self.list_num) == 5:
-                yield sum(self.list_num)
-                self.list_num = []
+            self.buffer.append(num)
 
     def get_current_part(self):
-        if len(self.list_num) == 5:
-            print(sum(self.list_num))
-        else:
-            print(0)
+        if len(self.buffer) >= 5:
+            print(f"Sum of {self.buffer[:5]} elements = {sum(self.buffer[:5])}")
+            self.buffer = self.buffer[5:]
 
 
 if __name__ == "__main__":
