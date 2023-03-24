@@ -1,7 +1,6 @@
 class Buffer:
     def __init__(self):
         self.buffer = []
-        self.sum_of_5 = 0
 
     def add(self, *a):
         for num in a:
