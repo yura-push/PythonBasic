@@ -7,7 +7,10 @@ def collatz(number):
         return 3 * number + 1
 
 
-user_input = int(input("Enter a number: "))
-test_val = collatz(user_input)
-while test_val != 1:
-    test_val = collatz(test_val)
+try:
+    user_input = int(input("Enter a number: "))
+    test_val = collatz(user_input)
+    while test_val != 1:
+        test_val = collatz(test_val)
+except ValueError:
+    print("Enter an integer value!")
