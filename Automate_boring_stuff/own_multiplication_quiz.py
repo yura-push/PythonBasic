@@ -16,7 +16,6 @@ while True:
         correct_answer += 1
         time.sleep(1)
     else:
-        tries = 0
         for i in range(2):
             question = int(input(f"{num1} * {num2} = "))
 
